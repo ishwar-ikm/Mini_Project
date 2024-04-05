@@ -56,8 +56,9 @@ section {
     min-height: 100vh;
 }
 
+
 #home {
-    background: linear-gradient(#0004, #0004), url(../static/bg.jpg);
+    background: linear-gradient(#0004, #0004), url(bg.jpg);
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -115,7 +116,7 @@ section {
 
 #about {
     padding: 7% 10%;
-    background: linear-gradient(#0004, rgba(45, 43, 43, 0.267)), url('../static/bg2.jpg');
+    background: linear-gradient(#0004, rgba(45, 43, 43, 0.267)), url('bg2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -161,7 +162,7 @@ footer {
 }
 
 #predict {
-    background: linear-gradient(#0004, rgba(45, 43, 43, 0.35)), url(../static/bg3.jpg);
+    background: linear-gradient(#0004, rgba(45, 43, 43, 0.35)), url(bg3.jpg);
     background-size: cover;
     background-position: center;
     display: flex;
