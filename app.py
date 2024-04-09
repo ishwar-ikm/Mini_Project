@@ -8,7 +8,9 @@ import pickle
 
 
 app = Flask(__name__, template_folder="template")
-model = pickle.load(open("./machine learning/models/cat boost/model_xgb.pkl", "rb"))
+model = pickle.load(open("./machine learning/models/XGBoost/xgb.pkl", "rb"))
+scaler = pickle.load(open("./machine learning/models/XGBoost/scaler.pkl", "rb"))
+
 print("Model Loaded")
 
 @app.route("/",methods=['GET'])
@@ -65,12 +67,14 @@ def predict():
 		# Rain Today
 		rainToday = float(request.form['raintoday'])
 
-		input_lst = [location , minTemp , maxTemp , rainfall , evaporation , sunshine ,
-					 windGustDir , windGustSpeed , winddDir9am , winddDir3pm , windSpeed9am , windSpeed3pm ,
-					 humidity9am , humidity3pm , pressure9am , pressure3pm , cloud9am , cloud3pm , temp9am , temp3pm ,
-					 rainToday , month]
-		pred = model.predict(input_lst)
-		output = pred
+		input_lst = [[location, minTemp, maxTemp, rainfall, evaporation, sunshine,
+              windGustDir, windGustSpeed, winddDir9am, winddDir3pm, windSpeed9am, windSpeed3pm,
+              humidity9am, humidity3pm, pressure9am, pressure3pm, cloud9am, cloud3pm, temp9am, temp3pm,
+              rainToday, month]]
+
+		input_data = scaler.transform(input_lst)
+		output = model.predict(input_data)
+
 
 	if output == 0:
 		return render_template("sunny.html")
