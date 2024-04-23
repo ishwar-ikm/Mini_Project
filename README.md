@@ -76,6 +76,9 @@ To use the rainfall prediction app, follow these steps:
 ### Rainy Page
 ![Home Page](screenshots/rainy.png)
 
+### Model Comparison
+![Home Page](screenshots/model_comparison.png)
+
 ## Acknowledgments
 
 - Dataset [link](https://www.kaggle.com/datasets/arunavakrchakraborty/australia-weather-data)
