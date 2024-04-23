@@ -12,7 +12,7 @@ This project is a rainfall prediction app developed using an Australian dataset.
 
 4. **Removing Outliers**: Outliers were detected and removed from the dataset to improve model performance.
 
-5. **Feature Selection**: Relevant features were selected using techniques such as correlation analysis or feature importance.
+5. **Feature Selection**: Relevant features were selected using filter method.
 
 ## Model Training
 
